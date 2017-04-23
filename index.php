@@ -30,7 +30,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->  
+    <!-- Latest compiled and minified JavaScript -->
 </head>
 
 <body>
@@ -55,8 +55,9 @@
                     <!-- Single button -->
                     <div class="btn-group">
                       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="glyphicon glyphicon-user"></span>
-                        <span class="caret"></span>
+
+                        <h4>(會員名)~你好~~<span class="glyphicon glyphicon-user"></span><span class="caret"></span></h4>
+
                       </button>
                       <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dLabel">
                         <li><a href="#">會員中心</a></li>
@@ -105,9 +106,9 @@
                 <div class="col-sm-8">
                   <!-- Single button -->
                   <select class="selectpicker" data-style="btn-primary">
-                    <option>Mustard</option>
-                    <option>Ketchup</option>
-                    <option>Relish</option>
+                    <option>便當名1+價位1</option>
+                    <option>便當名2+價位2</option>
+                    <option>便當名3+價位3</option>
                   </select>
                 </div>
               </div>
