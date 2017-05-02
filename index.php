@@ -107,7 +107,7 @@
               <h3>選擇便當</h3>
               <div class="col-sm-8">
                 <!-- Single button -->
-                <select class="selectpicker" data-style="btn-primary">
+                <select class="selectpicker" data-style="btn-danger">
                   <optgroup label="Picnic">
                     <option>便當名1+價位1</option>
                     <option>便當名2+價位2</option>
@@ -132,7 +132,7 @@
 
             <div class="form-group">
               <div class="col-sm-2 col-xs-5">
-                <button type="submit" class="btn btn-primary">送出</button>
+                <button type="submit" class="btn btn-success">送出</button>
               </div>
             </div>
 
