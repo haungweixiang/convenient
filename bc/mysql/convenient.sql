@@ -59,8 +59,10 @@ CREATE TABLE `selectmember` (
   `SM` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `SDatetimes` datetime NOT NULL,
   PRIMARY KEY (`SMID`),
-  KEY `SM` (`SM`),
-  CONSTRAINT `MemberName` FOREIGN KEY (`SM`) REFERENCES `members` (`MemberName`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `MemberName_idx` (`SM`),
+  KEY `SConvenient_idx` (`SConvenient`),
+  CONSTRAINT `MemberName` FOREIGN KEY (`SM`) REFERENCES `members` (`MemberName`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `SConvenient` FOREIGN KEY (`SConvenient`) REFERENCES `stores` (`StoreConvenient`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -86,12 +88,14 @@ CREATE TABLE `stores` (
   `StroePhone` int(10) NOT NULL,
   `StroeDescription` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `StorePic` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `StoreConvenient` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `StorePrice` int(10) NOT NULL,
   `StoreDatetime` datetime NOT NULL,
   PRIMARY KEY (`StoreID`),
   KEY `StoreName` (`StoreName`),
   KEY `StorePic` (`StorePic`),
-  KEY `StroePhone` (`StroePhone`)
+  KEY `StroePhone` (`StroePhone`),
+  KEY `idx_stores_StoreConvenient` (`StoreConvenient`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -142,4 +146,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-01  1:16:44
+-- Dump completed on 2017-05-03 16:05:31
