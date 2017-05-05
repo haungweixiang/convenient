@@ -59,11 +59,14 @@ CREATE TABLE `selectmember` (
   `SPrice` int(10) NOT NULL,
   `STotal` int(10) NOT NULL,
   `SM` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `STodayStore` int(10) NOT NULL,
   `SDatetimes` datetime NOT NULL,
   PRIMARY KEY (`SMID`),
   KEY `SM` (`SM`),
   KEY `SPrice` (`SPrice`),
+  KEY `STodayStore` (`STodayStore`),
   CONSTRAINT `MemberName` FOREIGN KEY (`SM`) REFERENCES `members` (`MemberName`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `STodayStore` FOREIGN KEY (`STodayStore`) REFERENCES `todaymenu` (`TodayID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `StorePrice` FOREIGN KEY (`SPrice`) REFERENCES `stores` (`StorePrice`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -148,4 +151,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-05 19:12:18
+-- Dump completed on 2017-05-05 22:21:17
