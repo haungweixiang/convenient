@@ -17,7 +17,7 @@ try {
     function select($db, $table_name, $number){//$db 連接資料庫; $table_name 資料表名稱; $number 看是要取得全部欄位資料還是,預設的幾筆
       switch ($number) {//number=all 全部欄位 * ; number = 1 特定預設欄位
         case 'all':
-          
+
           break;
 
         default:
