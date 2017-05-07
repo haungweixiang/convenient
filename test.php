@@ -6,21 +6,18 @@
 
     switch ($table_name) {
       case 'members':
-          # code...
+        if ($choose == "" || $choose == '1') {
+          $Select_Table = "SELECT * FROM $table_name";
+          $query = querys($db, $Select_Columns);
+        }elseif ($choose == '2') {
+          $Select_Columns = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name = '".$table_name."'";
+          $query = querys($db, $Select_Columns);
+        }
         break;
 
       default:
         # code...
         break;
-    }
-
-
-    if ($choose == "" || $choose == '1') {
-      $Select_Table = "SELECT * FROM $table_name";
-      $query = querys($db, $Select_Columns);
-    }elseif ($choose == '2') {
-      $Select_Columns = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name = '".$table_name."'";
-      $query = querys($db, $Select_Columns);
     }
     return $query;//執行查詢把結果回傳
   };//$Sql_Query_Select的結束
@@ -30,10 +27,28 @@
     return $query;
   }
 
-$Display = $Sql_Query_Select($db, "stores");
-  foreach ($Display as $key => $value) {
-    echo $value["COLUMN_NAME"];
-  }
+  $Display = $Sql_Query_Select($db, "members", '2');//查詢特定欄位
+
+  $Displays = $Display->fetchAll();
+
+    foreach ($Displays as $key => $value) {
+     $Show[$key] = $value[0];//把特定欄位用以索引
+    }
+
+echo $Show[2];//
+  // while($Display = $Sql_Query_Select($db, "members", '2')->fetch(PDO::FETCH_ASSOC)){
+  //   echo $Display[0];
+  // }
+
+// var_dump($Display);
+echo "<br/>";
+
+// var_dump($Displays);
+
+// $arrayName = array("0",'1','2');
+// echo "<br/>";
+//
+// var_dump($arrayName);
 
   $db = null;
  ?>
