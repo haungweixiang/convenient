@@ -14,11 +14,13 @@ try {
   header("location:./");
 }
 
-$Sql_Query_Select = function($db, $table_name){
-  $Select_Table = "SELECT * FROM $table_name";
-  $query = $db->query($Select_Table);
-  return $query;//執行查詢把結果回傳
-};
+// $Sql_Query_Select = function($db, $table_name){
+//   $Select_Columns = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name = '".$table_name."'";
+//
+//   $Select_Table = "SELECT * FROM $table_name";
+//   $query = $db->query($Select_Table);
+//   return $query;//執行查詢把結果回傳
+// };
 
 
 ?>
