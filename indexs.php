@@ -28,7 +28,6 @@
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
-
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
@@ -62,6 +61,7 @@
                       </button>
                       <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dLabel">
                         <li><a href="#">會員中心</a></li>
+
                         <li role="separator" class="divider"></li>
                         <li><a href="#">登出</a></li>
                       </ul>
@@ -76,14 +76,13 @@
 
     <!-- Page Content -->
     <div class="container">
-      <form class="form-horizontal">
-        <!-- 店家名 -->
+      <!-- 店家名 -->
         <div class="row">
-          <div class="col-lg-12">
-            <h1 class="page-header">店家名
-              <small> (店家電話)</small>
-            </h1>
-          </div>
+            <div class="col-lg-12">
+                <h1 class="page-header">店家名
+                    <small> (店家電話)</small>
+                </h1>
+            </div>
         </div>
         <!-- 店家名 -->
 
@@ -98,44 +97,35 @@
           <div class="col-md-4">
             <h3>說明</h3>
             <p>....</p>
-          <!-- </div> -->
+          </div>
           <br/>
 
-          <!-- <div class="col-md-4"> -->
-
-            <div class="form-group">
-              <h3>選擇便當</h3>
-              <div class="col-sm-8">
-                <!-- Single button -->
-                <select class="selectpicker" data-style="btn-danger">
-                  <optgroup label="Picnic">
+          <div class="col-md-4">
+            <form class="form-horizontal">
+              <div class="form-group">
+                <h3>選擇便當</h3>
+                <div class="col-sm-8">
+                  <!-- Single button -->
+                  <select class="selectpicker" data-style="btn-primary">
                     <option>便當名1+價位1</option>
                     <option>便當名2+價位2</option>
                     <option>便當名3+價位3</option>
-                  </optgroup>
-                </select>
+                  </select>
+                </div>
               </div>
-            </div>
-            <div class="form-group">
-              <div class="col-xs-8">
-                <h3>數量...?</h3>
-                <input type="text" class="form-control" id="pwd" placeholder="請輸入數量">
+              <div class="form-group">
+                <div class="col-sm-8">
+                  <h3>我是誰...?</h3>
+                  <input type="text" class="form-control" id="pwd" placeholder="(抓取會員名)">
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <div class="col-xs-8">
-                <h3>我是誰...?</h3>
-                <input type="text" class="form-control" id="pwd" placeholder="(抓取會員名)">
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-5">
+                  <button type="submit" class="btn btn-primary">送出</button>
+                </div>
               </div>
-            </div>
-
-            <div class="form-group">
-              <div class="col-sm-2 col-xs-5">
-                <button type="submit" class="btn btn-success">送出</button>
-              </div>
-            </div>
-
+            </form>
           </div>
         </div>
         <!-- /.row -->
@@ -144,14 +134,13 @@
 
         <!-- Footer -->
         <footer>
-          <div class="row">
-            <div class="col-lg-12">
-              <p>By: &copy; Your Website 2014</p>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>By: &copy; Your Website 2014</p>
+                </div>
             </div>
-          </div>
-          <!-- /.row -->
+            <!-- /.row -->
         </footer>
-      </form>
     </div>
     <!-- /.container -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
