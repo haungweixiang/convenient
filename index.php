@@ -61,9 +61,9 @@
 
                       </button>
                       <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dLabel">
-                        <li><a href="#">會員中心</a></li>
+                        <li><a href="center.html">會員中心</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">登出</a></li>
+                        <li><a href="login.html">登出</a></li>
                       </ul>
                     </div>
                   </li>
