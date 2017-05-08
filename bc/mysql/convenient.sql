@@ -31,6 +31,8 @@ CREATE TABLE `members` (
   `MemberPassword` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `MemberBalance` int(10) NOT NULL,
   `MemberDatetime` datetime NOT NULL,
+  `MDDatetime` datetime NOT NULL,
+  `MemberDeposit` int(10) NOT NULL,
   PRIMARY KEY (`MemberID`),
   KEY `MemberName` (`MemberName`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
@@ -42,18 +44,18 @@ CREATE TABLE `members` (
 
 LOCK TABLES `members` WRITE;
 /*!40000 ALTER TABLE `members` DISABLE KEYS */;
-INSERT INTO `members` VALUES (1,'s','','',0,'0000-00-00 00:00:00');
+INSERT INTO `members` VALUES (1,'s','','',0,'0000-00-00 00:00:00','0000-00-00 00:00:00',0);
 /*!40000 ALTER TABLE `members` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `selectmember`
+-- Table structure for table `selectmembers`
 --
 
-DROP TABLE IF EXISTS `selectmember`;
+DROP TABLE IF EXISTS `selectmembers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `selectmember` (
+CREATE TABLE `selectmembers` (
   `SMID` int(10) NOT NULL AUTO_INCREMENT,
   `SConvenient` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `SPrice` int(10) NOT NULL,
@@ -72,12 +74,12 @@ CREATE TABLE `selectmember` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `selectmember`
+-- Dumping data for table `selectmembers`
 --
 
-LOCK TABLES `selectmember` WRITE;
-/*!40000 ALTER TABLE `selectmember` DISABLE KEYS */;
-/*!40000 ALTER TABLE `selectmember` ENABLE KEYS */;
+LOCK TABLES `selectmembers` WRITE;
+/*!40000 ALTER TABLE `selectmembers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `selectmembers` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -151,4 +153,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-05 22:21:17
+-- Dump completed on 2017-05-08  9:59:08
