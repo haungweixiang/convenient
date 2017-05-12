@@ -238,6 +238,13 @@
           <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> 菜單</a>
         </li>
         <li>
+          <a href="selectmember.php"><i class="fa fa-table fa-fw"></i>已點菜人員</a>
+        </li>
+        <li>
+          <a href="members.php"><i class="fa fa-edit fa-fw"></i> 會員管理</a>
+        </li>
+        <!--
+        <li>
           <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
           <ul class="nav nav-second-level">
             <li>
@@ -247,10 +254,6 @@
               <a href="morris.html">Morris.js Charts</a>
             </li>
           </ul>
-          <!-- /.nav-second-level -->
-        </li>
-        <li>
-          <a href="tables.html"><i class="fa fa-table fa-fw"></i>會員管理</a>
         </li>
         <li>
           <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
@@ -277,7 +280,6 @@
               <a href="grid.html">Grid</a>
             </li>
           </ul>
-          <!-- /.nav-second-level -->
         </li>
         <li>
           <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
@@ -304,10 +306,8 @@
                   <a href="#">Third Level Item</a>
                 </li>
               </ul>
-              <!-- /.nav-third-level -->
             </li>
           </ul>
-          <!-- /.nav-second-level -->
         </li>
         <li>
           <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
@@ -319,8 +319,7 @@
               <a href="login.html">Login Page</a>
             </li>
           </ul>
-          <!-- /.nav-second-level -->
-        </li>
+        </li> -->
       </ul>
     </div>
     <!-- /.sidebar-collapse -->

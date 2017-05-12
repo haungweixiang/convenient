@@ -28,7 +28,7 @@
 
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!-- Latest compiled and minified CSS -->
+    <!-- 下拉式選單的css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -43,9 +43,10 @@
 <body>
 
   <div id="wrapper">
-    <!-- Navigation -->
+
+    <!-- 左邊那排 -->
     <?php include 'left.php';?>
-    
+
     <div id="page-wrapper">
       <div class="row">
         <div class="col-lg-12">
@@ -142,7 +143,6 @@
                     <img src="http://www.people.com.cn/mediafile/pic/20150216/85/15606292194463751861.jpg" class="img-responsive img-rounded" >
                     <br>
                       <button type="submit" class="btn btn-success" name="today_store_name">送出</button>
-
                     </form>
                   </div>
                 </div>
@@ -153,7 +153,7 @@
                       總菜單
                   </h4>
                 </div>
-                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
                   <div class="panel-body">
                     <!-- /.row -->
                     <div class="row">
@@ -269,15 +269,11 @@
                                           <input type="number" class="form-control" id="StorePrice" placeholder="請輸入價位" name="StorePrice">
                                         </div>
                                       </div>
-                                      <div class="form-group">
-                                        <div class="col-sm-offset-2 col-sm-10">
-                                          <button type="submit" class="btn btn-success" name="submit_up_convenient">更新黑~~~</button>
-                                        </div>
-                                      </div>
                                     </form>
                                   </div>
                                   <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-danger pull-left" name="submit_up_convenient">更新黑~~~</button>
+                                    <button type="button" class="btn btn-info" data-dismiss="modal">關閉</button>
                                   </div><!-- modal-header -->
                                 </div><!-- modal-content -->
                               </div><!-- modal-dialog -->
@@ -289,13 +285,14 @@
                                 <div class="modal-content">
                                   <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">確定要刪除嗎</h4>
+                                    <h4 class="modal-title">確定要刪除此(便當)嗎???</h4>
                                   </div>
                                   <div class="modal-body">
-                                    <p>Some text in the modal.</p>
+                                    <p></p>
                                   </div>
                                   <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-danger pull-left" data-dismiss="modal" name="submit_de_convenient">刪除</button>
+                                    <button type="button" class="btn btn-info" data-dismiss="modal">關閉</button>
                                   </div><!-- modal-header -->
                                 </div><!-- modal-content -->
                               </div><!-- modal-dialog -->
@@ -336,10 +333,10 @@
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
 
-    <!-- Latest compiled and minified JavaScript -->
+    <!-- 下拉式選單的js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
 
-    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <!-- 下拉式選單的js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/i18n/defaults-zh_TW.min.js"></script>
     <!-- 增加欄位 -->
     <script type="text/javascript">

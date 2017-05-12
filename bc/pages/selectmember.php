@@ -42,7 +42,8 @@
 
     <div id="wrapper">
 
-        <!-- Navigation -->
+        <!-- 左邊那排 -->
+        <?php include 'left.php'; ?>
 
         <div id="page-wrapper">
             <div class="row">
@@ -62,10 +63,10 @@
                           <div class="panel-body">
 
                             <a download="somedata.xls" href="#" class="btn btn-info"
-                            onclick="return ExcellentExport.excel(this, 'dataTables-example', 'Sheet Name Here');">
-                            匯出excel
-                          </a>
-
+                              onclick="return ExcellentExport.excel(this, 'dataTables-example', 'Sheet Name Here');">
+                              匯出excel
+                            </a>
+                            <br/>
                           <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
                               <tr>
@@ -119,6 +120,64 @@
 
     </div>
     <!-- /#wrapper -->
+
+    <!-- Edit -->
+    <div id="Edit" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">更新便當</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal" action="/action_page.php" method="post">
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="SelectConvenient">便當</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="SelectConvenient" placeholder="請輸入便當" name="SelectConvenient">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="SelectPrice">價位</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control" id="SelectPrice" placeholder="請輸入價位" name="SelectPrice">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="MemberName">姓名</label>
+                <div class="col-sm-10">
+                  <p class="h5">(會員名)</p>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success pull-left" name="submit_up_select">更新黑~~~</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">關閉</button>
+          </div><!-- modal-header -->
+        </div><!-- modal-content -->
+      </div><!-- modal-dialog -->
+    </div><!-- #Edit -->
+    <!-- Delete -->
+    <div id="Delete" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">確定要刪除嗎</h4>
+          </div>
+          <div class="modal-body">
+            <p>Some text in the modal.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" name="submit_de">刪除</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+          </div><!-- modal-header -->
+        </div><!-- modal-content -->
+      </div><!-- modal-dialog -->
+    </div><!-- #Delete -->
 
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
