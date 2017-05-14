@@ -121,7 +121,7 @@
                             <thead>
                               <tr>
                                 <th>會員名</th>
-                                <th>便當價位</th>
+                                <th>便當+價位</th>
                                 <th>餘額</th>
                                 <th>日期</th>
                               </tr>
@@ -333,8 +333,8 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-success pull-left" name="submit_up_convenient">更新黑~~~</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal">關閉</button>
+            <button type="submit" class="btn btn-danger pull-left" name="submit_up_convenient">更新黑~~~</button>
+            <button type="button" class="btn btn-info" data-dismiss="modal">關閉</button>
           </div><!-- modal-header -->
         </div><!-- modal-content -->
       </div><!-- modal-dialog -->
@@ -352,8 +352,8 @@
             <p></p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">刪除</button>
-            <button type="button" class="btn btn-success" data-dismiss="modal">關閉</button>
+            <button type="button" class="btn btn-danger pull-left" data-dismiss="modal" name="submit_de_member">刪除</button>
+            <button type="button" class="btn btn-info" data-dismiss="modal">關閉</button>
           </div><!-- modal-header -->
         </div><!-- modal-content -->
       </div><!-- modal-dialog -->

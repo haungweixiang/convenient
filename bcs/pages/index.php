@@ -153,7 +153,7 @@
                       總菜單
                   </h4>
                 </div>
-                <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                   <div class="panel-body">
                     <!-- /.row -->
                     <div class="row">

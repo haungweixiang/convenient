@@ -172,8 +172,8 @@
             <p>Some text in the modal.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal" name="submit_de">刪除</button>
-            <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+            <button type="button" class="btn btn-danger pull-left" data-dismiss="modal" name="submit_de">刪除</button>
+            <button type="button" class="btn btn-info" data-dismiss="modal">關閉</button>
           </div><!-- modal-header -->
         </div><!-- modal-content -->
       </div><!-- modal-dialog -->
