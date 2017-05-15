@@ -1,4 +1,5 @@
 <?php
+// @session_start();
 try {
   $username = 'root';
   $password = '12345678';
@@ -7,7 +8,10 @@ try {
   $options = array(
     PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
   );
-     $db = new PDO($dsn, $username, $password, $options);
+    $db = new PDO($dsn, $username, $password, $options);
+    // $_SESSION["link"] = $db;
+    // var_dump($db);
+
 } catch (Exception $e) {
   header("Cache-Control: no-store, no-cache, must-revalidate");
   header("Cache-Control: post-check=0, pre-check=0", false);

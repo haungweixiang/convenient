@@ -61,6 +61,7 @@
 // // var_dump($arrayName);
 //
 //   $db = null;
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +71,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
 
-    
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.1.0/octicons.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css
