@@ -32,8 +32,36 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
 <?php
-  @session_start();
-  $_SESSION["db"] = mysqli_connect();
+  include 'bcs/mysql/connect.php';
+  $Today = $TodayMenu($db);//
+
+  if ($Today == false) {
+
+    $TodayID = "(ID)";//顯示本日店家名ID
+    $TodayStoreName = "(店家名)";//顯示本日店家名
+    $TodayStorePhone = "(電話)";//顯示本日店家電話
+    $description = "(待說明)";
+    $pic = "http://placehold.it/750x500";
+
+  }else {
+
+    $TodayID = $Today["TodayID"];//顯示本日店家名ID
+    $TodayStoreName = $Today["TodayStoreName"];//顯示本日店家名
+    $TodayStorePhone = $Today["TodayStorePhone"];//顯示本日店家電話
+    $ShowStoreIn = $TodayStoreInformation($db, $TodayStoreName);//把本日店家的所有資訊全部撈出
+
+    if (empty($ShowStoreIn)) {
+      $description = "(待說明)";//說明
+      $pic = "http://placehold.it/750x500";
+    }else {
+
+      $description = $ShowStoreIn["0"]["StroeDescription"];
+      $pic = $ShowStoreIn["0"]["StorePic"];
+      if (empty($pic)) {
+        $pic = "http://placehold.it/750x500";
+      }
+    }
+  }
  ?>
 </head>
 
@@ -50,7 +78,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">(店家名)</a>
+                <a class="navbar-brand" href="#"><?php echo $TodayStoreName; ?></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
@@ -79,12 +107,13 @@
 
     <!-- Page Content -->
     <div class="container">
-      <form class="form-horizontal">
+      <form class="form-horizontal" action="test.php" method="post">
         <!-- 店家名 -->
         <div class="row">
           <div class="col-lg-12">
-            <h1 class="page-header">店家名
-              <small> (店家電話)</small>
+            <h1 class="page-header"><?php echo $TodayStoreName; ?>
+              <input type="hidden" name="TodayID" value="<?php echo $TodayID;?>">
+              <small><?php echo $TodayStorePhone; ?></small>
             </h1>
           </div>
         </div>
@@ -94,13 +123,13 @@
         <div class="row">
           <div class="col-md-8">
             <!-- 便當菜單 -->
-            <img class="img-responsive" src="http://placehold.it/750x500" alt="">
+            <img class="img-responsive" src="<?php echo $pic;?>" alt="">
             <!-- 便當菜單 -->
           </div>
 
           <div class="col-md-4">
             <h3>說明</h3>
-            <p>....</p>
+            <p class="h5"><?php echo $description; ?></p>
           <!-- </div> -->
           <br/>
 
@@ -110,11 +139,15 @@
               <h3>選擇便當</h3>
               <div class="col-sm-8">
                 <!-- Single button -->
-                <select class="selectpicker" data-style="btn-danger">
-                  <optgroup label="Picnic">
-                    <option>便當名1+價位1</option>
-                    <option>便當名2+價位2</option>
-                    <option>便當名3+價位3</option>
+                <select class="selectpicker" data-style="btn-danger" name="CP"><!-- CP = convenient price-->
+                  <optgroup label="便當+價位">
+                    <?php
+                      foreach ($ShowStoreIn as $key => $value) {
+                     ?>
+                    <option value="<?php echo $value['StoreConvenient']."+".$value["SCPrice"]; ?>">
+                      <?php echo $value['StoreConvenient']."+".$value["SCPrice"]; ?>
+                    </option>
+                    <?php } ?>
                   </optgroup>
                 </select>
               </div>
@@ -122,14 +155,14 @@
             <div class="form-group">
               <div class="col-xs-8">
                 <h3>數量...?</h3>
-                <input type="text" class="form-control" id="pwd" placeholder="請輸入數量">
+                <input type="text" class="form-control" name="number" id="number" placeholder="請輸入數量">
               </div>
             </div>
 
             <div class="form-group">
               <div class="col-xs-8">
                 <h3>我是誰...?</h3>
-                <input type="text" class="form-control" id="pwd" placeholder="(抓取會員名)">
+                <input type="text" class="form-control" id="name" placeholder="(抓取會員名)">
               </div>
             </div>
 
