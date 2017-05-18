@@ -24,6 +24,19 @@ $TodayStoreInformation = function($db, $TodayStoreName){
 };
 //顯示本日店家的資訊
 
+//我是誰...?
+$login_member_name = "";//登入的使用者姓名
+$required = "required";//必填
+$readonly = "readonly";//唯讀
+
+$input = function($name, $status){
+  echo "
+    <input type='text' class='form-control' id='name' name='name' placeholder='(抓取會員名)' value='".$name."' $status>
+  ";
+};
+//我是誰...?
+
+
 $Today = $TodayMenu($db);
 
 if ($Today == false) {

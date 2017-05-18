@@ -1,5 +1,4 @@
 <?php
-// @session_start();
 try {
   $username = 'root';
   $password = '12345678';

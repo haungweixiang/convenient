@@ -42,22 +42,29 @@
  ?>
  <script type="text/javascript">
    $(document).ready(function() {
-     $("form").submit(function(event) {
-       $(this).validate({
+     $("form").focus(function(event) {
+       $("form").validate({
          rules:{
            name: "required",
-           number:"required"
+           number:{
+             required:true,
+             digits:true
+           }
          },
          messages:{
-           name:alert("必填"),
+           name:"必填",
            number:"必填"
          }
        });
      });
-
-   });
-
+   });   
  </script>
+ <style media="screen">
+   .error{
+     color:red;
+     border-color: red;
+   }
+ </style>
 </head>
 
 <body>
@@ -151,14 +158,22 @@
             <div class="form-group">
               <div class="col-xs-8">
                 <h3>數量...?</h3>
-                <input type="number" class="form-control" name="number" id="number" placeholder="請輸入數量">
+                <input type="number" class="form-control" name="number" id="number" placeholder="請輸入數量" required="required">
               </div>
             </div>
 
             <div class="form-group">
               <div class="col-xs-8">
                 <h3>我是誰...?</h3>
-                <input type="text" class="form-control" id="name" name="name" placeholder="(抓取會員名)">
+                <?php
+                  //$input 在todaymenu/todaymenu.php
+                  if (isset($login_member_name) && !empty($login_member_name)) {//當使用者登入時會顯示唯讀,姓名部分就不能更改
+                    $input($login_member_name, $readonly);
+                  }else {//反之如果是訪客就得自己輸入姓名
+                    $login_member_name = "";
+                    $input($login_member_name, $required);
+                  }
+                 ?>
               </div>
             </div>
 
@@ -167,7 +182,6 @@
                 <button type="submit" class="btn btn-success" name="submit_IConvenient">送出</button>
               </div>
             </div>
-
           </div>
         </div>
         <!-- /.row -->
