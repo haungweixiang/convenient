@@ -1,5 +1,5 @@
 <?php
-
+ // 輸出結果hyread.html
 // echo $_POST["select_store_name"];
 //   include 'bc/mysql/connect.php';
 //

@@ -31,38 +31,33 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
+
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+
+
 <?php
-  include 'bcs/mysql/connect.php';
-  $Today = $TodayMenu($db);//
-
-  if ($Today == false) {
-
-    $TodayID = "(ID)";//顯示本日店家名ID
-    $TodayStoreName = "(店家名)";//顯示本日店家名
-    $TodayStorePhone = "(電話)";//顯示本日店家電話
-    $description = "(待說明)";
-    $pic = "http://placehold.it/750x500";
-
-  }else {
-
-    $TodayID = $Today["TodayID"];//顯示本日店家名ID
-    $TodayStoreName = $Today["TodayStoreName"];//顯示本日店家名
-    $TodayStorePhone = $Today["TodayStorePhone"];//顯示本日店家電話
-    $ShowStoreIn = $TodayStoreInformation($db, $TodayStoreName);//把本日店家的所有資訊全部撈出
-
-    if (empty($ShowStoreIn)) {
-      $description = "(待說明)";//說明
-      $pic = "http://placehold.it/750x500";
-    }else {
-
-      $description = $ShowStoreIn["0"]["StroeDescription"];
-      $pic = $ShowStoreIn["0"]["StorePic"];
-      if (empty($pic)) {
-        $pic = "http://placehold.it/750x500";
-      }
-    }
-  }
+  include 'bcs/mysql/connect.php';//資料庫連線
+  include 'todaymenu/todaymenu.php';//本日菜單的程式
  ?>
+ <script type="text/javascript">
+   $(document).ready(function() {
+     $("form").submit(function(event) {
+       $(this).validate({
+         rules:{
+           name: "required",
+           number:"required"
+         },
+         messages:{
+           name:alert("必填"),
+           number:"必填"
+         }
+       });
+     });
+
+   });
+
+ </script>
 </head>
 
 <body>
@@ -107,7 +102,8 @@
 
     <!-- Page Content -->
     <div class="container">
-      <form class="form-horizontal" action="test.php" method="post">
+      <!-- <form class="form-horizontal" action="todaymenu/insertconvenient.php" method="post"> -->
+      <form class="form-horizontal" action="" method="post">
         <!-- 店家名 -->
         <div class="row">
           <div class="col-lg-12">
@@ -155,20 +151,20 @@
             <div class="form-group">
               <div class="col-xs-8">
                 <h3>數量...?</h3>
-                <input type="text" class="form-control" name="number" id="number" placeholder="請輸入數量">
+                <input type="number" class="form-control" name="number" id="number" placeholder="請輸入數量">
               </div>
             </div>
 
             <div class="form-group">
               <div class="col-xs-8">
                 <h3>我是誰...?</h3>
-                <input type="text" class="form-control" id="name" placeholder="(抓取會員名)">
+                <input type="text" class="form-control" id="name" name="name" placeholder="(抓取會員名)">
               </div>
             </div>
 
             <div class="form-group">
               <div class="col-sm-2 col-xs-5">
-                <button type="submit" class="btn btn-success">送出</button>
+                <button type="submit" class="btn btn-success" name="submit_IConvenient">送出</button>
               </div>
             </div>
 
