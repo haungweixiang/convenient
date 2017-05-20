@@ -37,7 +37,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
 </head>
 
 <body>
@@ -90,7 +90,7 @@
 
                       <div class="form-group">
                         <label>店家圖片上傳</label>
-                        <input type="file" name="new_pices_file">
+                        <input type="url" name="new_pices_file" class="form-control">
                         <!-- new_pices_file 照片 -->
                       </div>
 

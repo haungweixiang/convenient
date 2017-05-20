@@ -57,7 +57,7 @@
          }
        });
      });
-   });   
+   });
  </script>
  <style media="screen">
    .error{
@@ -94,7 +94,7 @@
 
                       </button>
                       <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dLabel">
-                        <li><a href="center.html">會員中心</a></li>
+                        <li><a href="center.php">會員中心</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="login.html">登出</a></li>
                       </ul>
@@ -110,7 +110,7 @@
     <!-- Page Content -->
     <div class="container">
       <!-- <form class="form-horizontal" action="todaymenu/insertconvenient.php" method="post"> -->
-      <form class="form-horizontal" action="" method="post">
+      <form class="form-horizontal" action="todaymenu/insertconvenient.php" method="post">
         <!-- 店家名 -->
         <div class="row">
           <div class="col-lg-12">
@@ -130,7 +130,7 @@
             <!-- 便當菜單 -->
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-4 col-xs-12">
             <h3>說明</h3>
             <p class="h5"><?php echo $description; ?></p>
           <!-- </div> -->
@@ -140,7 +140,7 @@
 
             <div class="form-group">
               <h3>選擇便當</h3>
-              <div class="col-sm-8">
+              <div class="col-sm-8 col-xs-12">
                 <!-- Single button -->
                 <select class="selectpicker" data-style="btn-danger" name="CP"><!-- CP = convenient price-->
                   <optgroup label="便當+價位">
@@ -156,14 +156,14 @@
               </div>
             </div>
             <div class="form-group">
-              <div class="col-xs-8">
+              <div class="col-md-8 col-xs-12">
                 <h3>數量...?</h3>
                 <input type="number" class="form-control" name="number" id="number" placeholder="請輸入數量" required="required">
               </div>
             </div>
 
             <div class="form-group">
-              <div class="col-xs-8">
+              <div class="col-md-8 col-xs-12">
                 <h3>我是誰...?</h3>
                 <?php
                   //$input 在todaymenu/todaymenu.php

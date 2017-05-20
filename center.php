@@ -29,6 +29,10 @@
   <!-- Bootstrap Core JavaScript -->
   <script src="js/bootstrap.min.js"></script>
   <!-- Latest compiled and minified JavaScript -->
+  <?php
+    include 'bcs/mysql/connect.php';
+    include 'center/SqlCenterApi.php';
+   ?>
 </head>
 
 <body>
@@ -77,25 +81,23 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">存款
-
-
+      <h1 class="page-header">會員資訊
       </h1>
     </div>
   </div>
-
   <div>
 
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">存款</a></li>
-      <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">餘額</a></li>
+      <li role="presentation" ><a href="#deposit" aria-controls="home" role="tab" data-toggle="tab">存款</a></li>
+      <!-- <li role="presentation" class="active"><a href="#balance" aria-controls="profile" role="tab" data-toggle="tab">餘額</a></li> -->
       <!-- <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">日期</a></li> -->
-      <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">曾經訂購便當</a></li>
+      <li role="presentation" class="active"><a href="#before_convenient" aria-controls="settings" role="tab" data-toggle="tab">曾經訂購便當</a></li>
     </ul>
 
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="home"></br>
+<!-- 存款 -->
+      <div role="tabpanel" class="tab-pane" id="deposit"></br>
         <table class="table table-hover ">
           <thead>
             <tr>
@@ -105,83 +107,100 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>John</td>
-              <td>NT$</td>
-              <td>yy/yy/yy/yy</td>
-            </tr>
-            <tr>
-              <td>Mary</td>
-              <td>NT$</td>
-              <td>yy/yy/yy/yy</td>
-            </tr>
-            <tr>
-              <td>July</td>
-              <td>NT$</td>
-              <td>yy/yy/yy/yy</td>
-            </tr>
+            <?php
+              include 'center/Deposit.php';
+             ?>
           </tbody>
         </table>
       </div>
+<!-- 存款 -->
 
-      <div role="tabpanel" class="tab-pane" id="profile"></br>
+<!-- 餘額 -->
+      <!-- <div role="tabpanel" class="tab-pane active" id="balance"></br>
         <table class="table table-hover">
           <thead>
             <tr>
               <th>姓名</th>
+              <th>存款</th>
+              <th>便當價位</th>
               <th>餘額</th>
               <th>日期</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
+          <tbody> -->
+            <?php
+              // foreach ($Show as $key => $value) {
+              //   echo "
+              //   <tr>
+              //     <td>".$value['MemberName']."</td>
+              //     <td>".$value['MemberDeposit']."</td>
+              //     <td></td>
+              //     <td>".$value['MemberBalance']."</td>
+              //     <td>".$value['MemberDatetime']."</td>
+              //    </tr>
+              //    ";
+              // }
+             ?>
+            <!-- <tr>
               <td>John</td>
+              <td>NT$</td>
+              <td>NT$</td>
               <td>NT$</td>
               <td>yy/yy/yy/yy</td>
             </tr>
             <tr>
               <td>Mary</td>
               <td>NT$</td>
+              <td>NT$</td>
+              <td>NT$</td>
               <td>yy/yy/yy/yy</td>
             </tr>
             <tr>
               <td>July</td>
               <td>NT$</td>
+              <td>NT$</td>
+              <td>NT$</td>
               <td>yy/yy/yy/yy</td>
             </tr>
           </tbody>
         </table>
-      </div>
+      </div>-->
+<!-- 餘額 -->
 
-
-
-      <div role="tabpanel" class="tab-pane" id="settings"> </br>
+      <div role="tabpanel" class="tab-pane active" id="before_convenient"> </br>
         <table class="table table-hover">
           <thead>
             <tr>
               <th>姓名</th>
               <th>店家名</th>
               <th>便當+價位</th>
+              <th>餘額</th>
               <th>日期</th>
             </tr>
           </thead>
           <tbody>
+            <?php
+              include 'center/Before_Convenient.php';
+             ?>
             <tr>
               <td>John</td>
               <td>NT$</td>
               <td>NT$+便當</td>
+              <td>餘額</td>
               <td>yy/yy/yy/yy</td>
             </tr>
             <tr>
               <td>Mary</td>
               <td>NT$</td>
               <td>NT$+便當</td>
+              <td>餘額</td>
               <td>yy/yy/yy/yy</td>
             </tr>
             <tr>
               <td>July</td>
               <td>NT$</td>
               <td>NT$+便當</td>
+              <td>餘額</td>
               <td>yy/yy/yy/yy</td>
             </tr>
           </tbody>

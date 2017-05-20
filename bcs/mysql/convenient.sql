@@ -33,10 +33,9 @@ CREATE TABLE `members` (
   `MDDatetime` datetime NOT NULL,
   `MemberBalance` int(10) NOT NULL,
   `MemberDatetime` datetime NOT NULL,
-  `memberscol` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`MemberID`),
   KEY `MemberName` (`MemberName`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,6 +44,7 @@ CREATE TABLE `members` (
 
 LOCK TABLES `members` WRITE;
 /*!40000 ALTER TABLE `members` DISABLE KEYS */;
+INSERT INTO `members` VALUES (1,'a','aa','aaa',0,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `members` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,6 +59,7 @@ CREATE TABLE `selectmembers` (
   `SMID` int(10) NOT NULL AUTO_INCREMENT,
   `SConvenient` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `SPrice` int(10) NOT NULL,
+  `SQuantity` int(10) NOT NULL,
   `STotal` int(10) NOT NULL,
   `SM` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `STodayStore` int(10) NOT NULL,
@@ -70,7 +71,7 @@ CREATE TABLE `selectmembers` (
   KEY `StoreConvenient_idx` (`SConvenient`),
   CONSTRAINT `MemberName` FOREIGN KEY (`SM`) REFERENCES `members` (`MemberName`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `STodayStore` FOREIGN KEY (`STodayStore`) REFERENCES `todaymenu` (`TodayID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -79,6 +80,7 @@ CREATE TABLE `selectmembers` (
 
 LOCK TABLES `selectmembers` WRITE;
 /*!40000 ALTER TABLE `selectmembers` DISABLE KEYS */;
+INSERT INTO `selectmembers` VALUES (23,'雞排',20,1,20,'a',18,'0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `selectmembers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -94,16 +96,15 @@ CREATE TABLE `stores` (
   `StoreName` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `StroePhone` int(10) NOT NULL,
   `StroeDescription` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `StorePic` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `StorePic` text COLLATE utf8_unicode_ci NOT NULL,
   `StoreConvenient` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `SCPrice` int(10) NOT NULL,
   `StoreDatetime` datetime NOT NULL,
   PRIMARY KEY (`StoreID`),
   KEY `StoreName` (`StoreName`),
-  KEY `StorePic` (`StorePic`),
   KEY `StroePhone` (`StroePhone`),
   KEY `StoreConvenient` (`StoreConvenient`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -112,7 +113,7 @@ CREATE TABLE `stores` (
 
 LOCK TABLES `stores` WRITE;
 /*!40000 ALTER TABLE `stores` DISABLE KEYS */;
-INSERT INTO `stores` VALUES (8,'a',1,'aa','','aaa',11,'0000-00-00 00:00:00'),(9,'b',2,'bb','','bbb',22,'0000-00-00 00:00:00'),(10,'c',3,'cc','','ccc',333,'0000-00-00 00:00:00'),(11,'d',4,'dd','','ddd',11,'0000-00-00 00:00:00');
+INSERT INTO `stores` VALUES (13,'a',0,'aa','http://www.railway-bento.com.tw/wp-content/uploads/2013/10/014%E6%BB%B7%E9%A6%99%E9%9B%9E%E8%85%BF%E9%A3%AF.jpg','雞腿',10,'0000-00-00 00:00:00'),(14,'b',1,'bb','http://2.bp.blogspot.com/-cxUwl5Oz0T0/VnqsHm5gbMI/AAAAAAAAE3w/nOv5stQ5E9A/s1600/IMG_0930.jpg','雞排',20,'0000-00-00 00:00:00'),(16,'c',2,'cc','http://img.ltn.com.tw/Upload/liveNews/BigPic/600_php2eoHWE.jpg','噁心',30,'0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `stores` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -133,7 +134,7 @@ CREATE TABLE `todaymenu` (
   KEY `TodayStroePhone` (`TodayStorePhone`),
   CONSTRAINT `TodayStoreName` FOREIGN KEY (`TodayStoreName`) REFERENCES `stores` (`StoreName`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `TodayStroePhone` FOREIGN KEY (`TodayStorePhone`) REFERENCES `stores` (`StroePhone`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,7 +143,7 @@ CREATE TABLE `todaymenu` (
 
 LOCK TABLES `todaymenu` WRITE;
 /*!40000 ALTER TABLE `todaymenu` DISABLE KEYS */;
-INSERT INTO `todaymenu` VALUES (9,'a',1,'0000-00-00 00:00:00');
+INSERT INTO `todaymenu` VALUES (18,'a',0,'0000-00-00 00:00:00'),(20,'b',1,'0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `todaymenu` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -155,4 +156,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-16 17:42:16
+-- Dump completed on 2017-05-19 12:02:17
