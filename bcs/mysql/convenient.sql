@@ -29,13 +29,13 @@ CREATE TABLE `members` (
   `MemberName` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `MemberAccount` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `MemberPassword` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
-  `MemberDeposit` int(10) NOT NULL,
+  `MemberDeposit` int(10) DEFAULT '0',
   `MDDatetime` datetime NOT NULL,
   `MemberBalance` int(10) NOT NULL,
   `MemberDatetime` datetime NOT NULL,
   PRIMARY KEY (`MemberID`),
   KEY `MemberName` (`MemberName`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `members` (
 
 LOCK TABLES `members` WRITE;
 /*!40000 ALTER TABLE `members` DISABLE KEYS */;
-INSERT INTO `members` VALUES (1,'a','aa','aaa',0,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00');
+INSERT INTO `members` VALUES (1,'a','aa','aaa',0,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00'),(2,'a','aa','aaa',100,'0000-00-00 00:00:00',100,'0000-00-00 00:00:00'),(3,'a','aa','aaa',0,'0000-00-00 00:00:00',1,'0000-00-00 00:00:00'),(4,'a','aa','aaa',NULL,'0000-00-00 00:00:00',1,'0000-00-00 00:00:00'),(5,'a','aa','aaa',NULL,'0000-00-00 00:00:00',1,'0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `members` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -71,7 +71,7 @@ CREATE TABLE `selectmembers` (
   KEY `StoreConvenient_idx` (`SConvenient`),
   CONSTRAINT `MemberName` FOREIGN KEY (`SM`) REFERENCES `members` (`MemberName`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `STodayStore` FOREIGN KEY (`STodayStore`) REFERENCES `todaymenu` (`TodayID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -156,4 +156,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-19 12:02:17
+-- Dump completed on 2017-05-22 10:57:12
