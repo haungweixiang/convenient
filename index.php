@@ -37,8 +37,10 @@
 
 
 <?php
+  
   include 'bcs/mysql/connect.php';//資料庫連線
   include 'todaymenu/todaymenu.php';//本日菜單的程式
+
  ?>
  <script type="text/javascript">
    $(document).ready(function() {

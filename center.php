@@ -30,8 +30,8 @@
   <script src="js/bootstrap.min.js"></script>
   <!-- Latest compiled and minified JavaScript -->
   <?php
-    include 'bcs/mysql/connect.php';
-    include 'center/SqlCenterApi.php';
+
+    include 'center/SqlCenterApi.php';//查詢的資料在這已json
    ?>
 </head>
 
@@ -180,24 +180,24 @@
           </thead>
           <tbody>
             <?php
-              include 'center/Before_Convenient.php';
+              // include 'center/Before_Convenient.php';
              ?>
             <tr>
-              <td>John</td>
+              <td>(抓取登入名)</td>
               <td>NT$</td>
               <td>NT$+便當</td>
               <td>餘額</td>
               <td>yy/yy/yy/yy</td>
             </tr>
             <tr>
-              <td>Mary</td>
+              <td>(抓取登入名)</td>
               <td>NT$</td>
               <td>NT$+便當</td>
               <td>餘額</td>
               <td>yy/yy/yy/yy</td>
             </tr>
             <tr>
-              <td>July</td>
+              <td>(抓取登入名)</td>
               <td>NT$</td>
               <td>NT$+便當</td>
               <td>餘額</td>

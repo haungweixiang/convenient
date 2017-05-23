@@ -18,6 +18,61 @@ USE `convenient`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `balance`
+--
+
+DROP TABLE IF EXISTS `balance`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `balance` (
+  `BalanceID` int(10) NOT NULL AUTO_INCREMENT,
+  `Balance` int(10) NOT NULL,
+  `BDatetime` datetime NOT NULL,
+  `MemberID` int(10) NOT NULL,
+  PRIMARY KEY (`BalanceID`),
+  KEY `MemberID` (`MemberID`),
+  CONSTRAINT `MemberID_2` FOREIGN KEY (`MemberID`) REFERENCES `members` (`MemberID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `balance`
+--
+
+LOCK TABLES `balance` WRITE;
+/*!40000 ALTER TABLE `balance` DISABLE KEYS */;
+/*!40000 ALTER TABLE `balance` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `deposit`
+--
+
+DROP TABLE IF EXISTS `deposit`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `deposit` (
+  `DepositID` int(10) NOT NULL AUTO_INCREMENT,
+  `Deposit` int(10) NOT NULL,
+  `DDatetime` datetime NOT NULL,
+  `MemberID` int(10) NOT NULL,
+  PRIMARY KEY (`DepositID`),
+  KEY `MemberID_1` (`MemberID`),
+  CONSTRAINT `MemberID_1` FOREIGN KEY (`MemberID`) REFERENCES `members` (`MemberID`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `deposit`
+--
+
+LOCK TABLES `deposit` WRITE;
+/*!40000 ALTER TABLE `deposit` DISABLE KEYS */;
+INSERT INTO `deposit` VALUES (1,100,'0000-00-00 00:00:00',1);
+/*!40000 ALTER TABLE `deposit` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `members`
 --
 
@@ -29,9 +84,6 @@ CREATE TABLE `members` (
   `MemberName` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `MemberAccount` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `MemberPassword` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
-  `MemberDeposit` int(10) DEFAULT '0',
-  `MDDatetime` datetime NOT NULL,
-  `MemberBalance` int(10) NOT NULL,
   `MemberDatetime` datetime NOT NULL,
   PRIMARY KEY (`MemberID`),
   KEY `MemberName` (`MemberName`)
@@ -44,7 +96,7 @@ CREATE TABLE `members` (
 
 LOCK TABLES `members` WRITE;
 /*!40000 ALTER TABLE `members` DISABLE KEYS */;
-INSERT INTO `members` VALUES (1,'a','aa','aaa',0,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00'),(2,'a','aa','aaa',100,'0000-00-00 00:00:00',100,'0000-00-00 00:00:00'),(3,'a','aa','aaa',0,'0000-00-00 00:00:00',1,'0000-00-00 00:00:00'),(4,'a','aa','aaa',NULL,'0000-00-00 00:00:00',1,'0000-00-00 00:00:00'),(5,'a','aa','aaa',NULL,'0000-00-00 00:00:00',1,'0000-00-00 00:00:00');
+INSERT INTO `members` VALUES (1,'a','aa','aaa','0000-00-00 00:00:00'),(2,'a','aa','aaa','0000-00-00 00:00:00'),(3,'a','aa','aaa','0000-00-00 00:00:00'),(4,'a','aa','aaa','0000-00-00 00:00:00'),(5,'a','aa','aaa','0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `members` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -156,4 +208,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-22 10:57:12
+-- Dump completed on 2017-05-22 14:38:54
