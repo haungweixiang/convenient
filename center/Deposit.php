@@ -1,6 +1,6 @@
 <?php
-  $Show = json_decode($Json, true);
-  foreach ($Show as $key => $value) {
+  $ShowDeposit = json_decode($Deposit_Json, true);
+  foreach ($ShowDeposit as $key => $value) {
 
     $MN = $value['MemberName'];//會員名
     $MD = $value['Deposit'];//存款金額

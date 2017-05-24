@@ -30,7 +30,6 @@
   <script src="js/bootstrap.min.js"></script>
   <!-- Latest compiled and minified JavaScript -->
   <?php
-
     include 'center/SqlCenterApi.php';//查詢的資料在這已json
    ?>
 </head>
@@ -90,7 +89,7 @@
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" ><a href="#deposit" aria-controls="home" role="tab" data-toggle="tab">存款</a></li>
-      <!-- <li role="presentation" class="active"><a href="#balance" aria-controls="profile" role="tab" data-toggle="tab">餘額</a></li> -->
+      <li role="presentation"><a href="#balance" aria-controls="profile" role="tab" data-toggle="tab">餘額</a></li>
       <!-- <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">日期</a></li> -->
       <li role="presentation" class="active"><a href="#before_convenient" aria-controls="settings" role="tab" data-toggle="tab">曾經訂購便當</a></li>
     </ul>
@@ -108,7 +107,7 @@
           </thead>
           <tbody>
             <?php
-              include 'center/Deposit.php';
+              include 'center/Deposit.php';//存款頁面
              ?>
           </tbody>
         </table>
@@ -116,55 +115,37 @@
 <!-- 存款 -->
 
 <!-- 餘額 -->
-      <!-- <div role="tabpanel" class="tab-pane active" id="balance"></br>
+      <div role="tabpanel" class="tab-pane" id="balance"></br>
         <table class="table table-hover">
           <thead>
             <tr>
               <th>姓名</th>
-              <th>存款</th>
-              <th>便當價位</th>
               <th>餘額</th>
               <th>日期</th>
             </tr>
           </thead>
-          <tbody> -->
+          <tbody>
             <?php
-              // foreach ($Show as $key => $value) {
-              //   echo "
-              //   <tr>
-              //     <td>".$value['MemberName']."</td>
-              //     <td>".$value['MemberDeposit']."</td>
-              //     <td></td>
-              //     <td>".$value['MemberBalance']."</td>
-              //     <td>".$value['MemberDatetime']."</td>
-              //    </tr>
-              //    ";
-              // }
+              include 'center/Balance.php';
              ?>
-            <!-- <tr>
+            <tr>
               <td>John</td>
-              <td>NT$</td>
-              <td>NT$</td>
               <td>NT$</td>
               <td>yy/yy/yy/yy</td>
             </tr>
             <tr>
               <td>Mary</td>
               <td>NT$</td>
-              <td>NT$</td>
-              <td>NT$</td>
               <td>yy/yy/yy/yy</td>
             </tr>
             <tr>
               <td>July</td>
               <td>NT$</td>
-              <td>NT$</td>
-              <td>NT$</td>
               <td>yy/yy/yy/yy</td>
             </tr>
           </tbody>
         </table>
-      </div>-->
+      </div>
 <!-- 餘額 -->
 
       <div role="tabpanel" class="tab-pane active" id="before_convenient"> </br>
@@ -174,33 +155,37 @@
               <th>姓名</th>
               <th>店家名</th>
               <th>便當+價位</th>
-              <th>餘額</th>
+              <th>數量</th>
+              <th>總價</th>
               <th>日期</th>
             </tr>
           </thead>
           <tbody>
             <?php
-              // include 'center/Before_Convenient.php';
+              include 'center/BeforeConvenient.php';
              ?>
             <tr>
               <td>(抓取登入名)</td>
               <td>NT$</td>
               <td>NT$+便當</td>
-              <td>餘額</td>
+              <td>數量</td>
+              <td>總價</td>
               <td>yy/yy/yy/yy</td>
             </tr>
             <tr>
               <td>(抓取登入名)</td>
               <td>NT$</td>
               <td>NT$+便當</td>
-              <td>餘額</td>
+              <td>數量</td>
+              <td>總價</td>
               <td>yy/yy/yy/yy</td>
             </tr>
             <tr>
               <td>(抓取登入名)</td>
               <td>NT$</td>
               <td>NT$+便當</td>
-              <td>餘額</td>
+              <td>數量</td>
+              <td>總價</td>
               <td>yy/yy/yy/yy</td>
             </tr>
           </tbody>
