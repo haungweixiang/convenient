@@ -5,7 +5,7 @@
     $BDatetime = $value["BDatetime"];//餘額日期
     echo "
       <tr>
-        <td></td>
+        <td>(抓取會員名)</td>
         <td>$Balance</td>
         <td>$BDatetime</td>
       </tr>

@@ -128,26 +128,12 @@
             <?php
               include 'center/Balance.php';
              ?>
-            <tr>
-              <td>John</td>
-              <td>NT$</td>
-              <td>yy/yy/yy/yy</td>
-            </tr>
-            <tr>
-              <td>Mary</td>
-              <td>NT$</td>
-              <td>yy/yy/yy/yy</td>
-            </tr>
-            <tr>
-              <td>July</td>
-              <td>NT$</td>
-              <td>yy/yy/yy/yy</td>
-            </tr>
           </tbody>
         </table>
       </div>
 <!-- 餘額 -->
 
+<!-- 曾經訂購過的便當 -->
       <div role="tabpanel" class="tab-pane active" id="before_convenient"> </br>
         <table class="table table-hover">
           <thead>
@@ -164,39 +150,11 @@
             <?php
               include 'center/BeforeConvenient.php';
              ?>
-            <tr>
-              <td>(抓取登入名)</td>
-              <td>NT$</td>
-              <td>NT$+便當</td>
-              <td>數量</td>
-              <td>總價</td>
-              <td>yy/yy/yy/yy</td>
-            </tr>
-            <tr>
-              <td>(抓取登入名)</td>
-              <td>NT$</td>
-              <td>NT$+便當</td>
-              <td>數量</td>
-              <td>總價</td>
-              <td>yy/yy/yy/yy</td>
-            </tr>
-            <tr>
-              <td>(抓取登入名)</td>
-              <td>NT$</td>
-              <td>NT$+便當</td>
-              <td>數量</td>
-              <td>總價</td>
-              <td>yy/yy/yy/yy</td>
-            </tr>
           </tbody>
         </table>
-
-    <!-- Tab panes -->
-
-
-
       </div>
-    </div>
+<!-- 曾經訂購過的便當 -->
+    </div><!-- tab-content -->
   </div>
 
       <!-- 便當菜單 -->
