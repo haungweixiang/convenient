@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 
 <?php
-include("mysql.php");
+include("bcs/mysql/connect.php");
 
 $name = $_POST['Name'];
 $account = $_POST['accountnumber'];
